@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {
+        email,  
+        password
+  }
+
   return (
     <div className=" w-full h-screen flex justify-center items-center bg-gray-600 ">
       <div className=" flex h-1/2 w-1/2 bg-white">
@@ -21,11 +31,12 @@ const Register = () => {
                 type="text"
                 placeholder="info@site.com"
                 className="input input-bordered"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
           </div>
 
-          <div className="form-control">
+          <form onSubmit={handleSubmit} className="form-control">
             <label className="label">
               <span className="label-text">Şifreniz</span>
             </label>
@@ -35,9 +46,10 @@ const Register = () => {
                 type="password"
                 placeholder="info@site.com"
                 className="input input-bordered"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </label>
-          </div>
+          </form>
           <h1>
             Henuz Üye Olmadınız Mı?
             <span className="text-blue-600">
@@ -51,4 +63,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
