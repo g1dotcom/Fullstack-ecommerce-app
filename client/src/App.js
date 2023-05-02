@@ -1,4 +1,6 @@
-import { Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //pages
 import Register from "./pages/Register";
@@ -8,9 +10,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/register" element={<Register />} />
+        <Route index path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

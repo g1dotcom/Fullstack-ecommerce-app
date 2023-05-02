@@ -8,10 +8,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = {
-        email,  
-        password
-  }
-
+      email,
+      password,
+    };
+  };
   return (
     <div className=" w-full h-screen flex justify-center items-center bg-gray-600 ">
       <div className=" flex h-1/2 w-1/2 bg-white">

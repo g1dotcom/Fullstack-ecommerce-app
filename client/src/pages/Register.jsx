@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -7,7 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [profilePicture, setProfilePicture] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const user = {
       username,
@@ -21,9 +23,24 @@ const Register = () => {
       data.append("name", filename);
       data.append("file", profilePicture);
       user.profilePicture = filename;
+      try {
+        await axios.post("/upload", data);
+      } catch (err) {
+        console.log(err);
+      }
+      try {
+        const res = await axios.post("/register", user);
+        if (res.status === 200) {
+          toast.success("Başarıyla kayıt oldunuz");
+          setTimeout(() => {
+            window.location.href = "/login";
+          }, 2000);
+        }
+      } catch (error) {
+        toast.error("Kayıt işlemi başarısız");
+      }
     }
   };
-
   return (
     <div className=" w-full h-screen flex justify-center items-center bg-gray-600 ">
       <div className=" flex h-1/2 w-1/2 bg-white">
