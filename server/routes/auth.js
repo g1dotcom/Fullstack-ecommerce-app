@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/users.js");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 //register
 router.post("/register", async (req, res) => {
@@ -24,6 +25,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
+//login
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -34,11 +36,19 @@ router.post("/login", async (req, res) => {
       user.password
     );
 
-    if (!validPassword) {
-      res.status(403).send("Invalid password!");
-    } else {
-      res.status(200).json(user);
-    }
+    if (!validPassword) return res.status(403).send("Invalid password!");
+    const token = jwt.sign(
+      { id: user._id, isAdmin: user.isAdmin },
+      process.env.JWT
+    );
+
+    const { password, isAdmin, ...otherDetails } = user._doc;
+    res
+      .cookie("access_token", token, {
+        httpOnly: true,
+      })
+      .status(200)
+      .json({ details: { ...otherDetails }, isAdmin });
   } catch (err) {
     res.status(500).json(err);
   }
