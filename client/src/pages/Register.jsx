@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -7,7 +7,9 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [profilePicture, setProfilePicture] = useState("");
+  const [profilePicture, setProfilePicture] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,29 +18,26 @@ const Register = () => {
       email,
       password,
     };
-
     if (profilePicture) {
       const data = new FormData();
-      const filename = Date.now() + profilePicture.name;
-      data.append("name", filename);
+      const fileName = Date.now() + profilePicture.name;
+      data.append("name", fileName);
       data.append("file", profilePicture);
-      user.profilePicture = filename;
+      user.profilePicture = fileName;
       try {
         await axios.post("/upload", data);
       } catch (err) {
         console.log(err);
       }
-      try {
-        const res = await axios.post("/register", user);
-        if (res.status === 200) {
-          toast.success("Başarıyla kayıt oldunuz");
-          setTimeout(() => {
-            window.location.href = "/login";
-          }, 2000);
-        }
-      } catch (error) {
-        toast.error("Kayıt işlemi başarısız");
+    }
+    try {
+      const res = await axios.post("/auth/register", user);
+      if (res.status === 200) {
+        toast.success("Registration succesfull!");
+        navigate("/login");
       }
+    } catch (err) {
+      console.log(err);
     }
   };
   return (
@@ -50,7 +49,7 @@ const Register = () => {
           alt=""
         />
         <form
-          onChange={handleSubmit}
+          onSubmit={handleSubmit}
           className="bg-gray-400 flex flex-col justify-center items-center w-full"
         >
           <div className="form-control">
@@ -60,8 +59,8 @@ const Register = () => {
             <label className="input-group">
               <span>Username</span>
               <input
-                type="email"
-                placeholder="info@site.com"
+                type="text"
+                placeholder="username"
                 className="input input-bordered"
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -106,10 +105,15 @@ const Register = () => {
               onChange={(e) => setProfilePicture(e.target.files[0])}
             />
           </div>
+          <button
+            type="submit"
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          >
+            Responsive
+          </button>
           <h1>
             Zaten Üyemisin?
             <span className="text-blue-600">
-              {" "}
               <Link to={"/login"}>Giriş Yap</Link>
             </span>
           </h1>

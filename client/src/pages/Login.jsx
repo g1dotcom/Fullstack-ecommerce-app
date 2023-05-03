@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "../context/AuthContext";
+import { loginCall } from "../apiCalls";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { isFething, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {
-      email,
-      password,
-    };
+    loginCall({ email, password }, dispatch);
+    navigate("/");
   };
+
   return (
     <div className=" w-full h-screen flex justify-center items-center bg-gray-600 ">
       <div className=" flex h-1/2 w-1/2 bg-white">
@@ -49,6 +54,12 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+            <button
+              type="submit"
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+            >
+              {isFething ? "LÜtfen Bekleyiniz..." : "Giriş Yap"}
+            </button>
           </form>
           <h1>
             Henuz Üye Olmadınız Mı?
