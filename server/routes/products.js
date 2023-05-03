@@ -1,22 +1,9 @@
-const router = require("express").Router();
-const Products = require("../models/products.js");
+express = require("express");
 
-router.post("/", async (req, res) => {
-  try {
-    const { name, desc, rate, profilePicture } = req.body;
+const { products } = require("../controllers/products.js");
 
-    const newProducts = new Products({
-      name,
-      desc,
-      rate,
-      profilePicture,
-    });
+const router = express.Router();
 
-    const products = await newProducts.save();
-    res.status(200).json(products);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.post("/", products);
 
 module.exports = router;
