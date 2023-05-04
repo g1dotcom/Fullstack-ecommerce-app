@@ -8,20 +8,22 @@ import { SlBasket } from "react-icons/sl";
 const Right = () => {
   return (
     <div className="flex items-center gap-8">
-      <div className="flex items-center border p-3 rounded-full bg-gray-200">
+      <div className="flex items-center border p-3 text-white rounded-full bg-[#ff735c]">
         <input
           type="text"
-          placeholder="Type here"
-          className="bg-gray-200 outline-none"
+          placeholder="..."
+          className="bg-[#ff735c] outline-none text-white"
         />
-        <BsSearch size={28} />
+        <BsSearch size={25} />
       </div>
-      <AiOutlineHeart size={28} />
-      <div className="relative">
-        <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
+      <div className="bg-[#ff735c] rounded-md p-3 text-white">
+        <AiOutlineHeart size={25} />
+      </div>
+      <div className="relative bg-[#ff735c] rounded-md p-3 text-white">
+        <div className="absolute top-2 right-1 bg-white text-xs font-bold  text-[#ff735c] rounded-full w-3 h-3 flex items-center justify-center">
           3
         </div>
-        <SlBasket size={28} />
+        <SlBasket size={25} />
       </div>
     </div>
   );

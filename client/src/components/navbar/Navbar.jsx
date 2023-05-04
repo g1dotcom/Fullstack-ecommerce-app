@@ -6,7 +6,7 @@ import Right from "./Right";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center mt-4">
       <Left />
       <Right />
     </div>
