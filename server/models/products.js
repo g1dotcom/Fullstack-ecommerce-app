@@ -12,7 +12,7 @@ const ProductsSchema = new mongoose.Schema(
     desc: {
       type: String,
       require: true,
-      max: 50,
+      max: 100,
       unique: true,
     },
     rate: {
@@ -26,6 +26,10 @@ const ProductsSchema = new mongoose.Schema(
     followings: {
       type: Array,
       default: [],
+    },
+    category: {
+      type: String,
+      require: true,
     },
   },
   { timestamps: true }
