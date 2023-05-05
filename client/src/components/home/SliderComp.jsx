@@ -1,6 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
 
+//images
+import Img1 from "./images/5.png";
+import Img2 from "./images/33.jpg";
+import Img3 from "./images/1.png";
+import Img4 from "./images/44.jpg";
+
 const SliderComp = () => {
   //slider settings
   const settings = {
@@ -14,7 +20,7 @@ const SliderComp = () => {
   return (
     <div className="mt-10">
       <Slider {...settings}>
-        <div className="!flex items-center text-white bg-[#c86b5a]">
+        <div className="!flex items-center bg-[#aeb9e5] text-white">
           <div className="p-10">
             <h1 className="text-6xl font-bold">Lorem ipsum dolor sit amet.</h1>
             <h1 className="text-lg my-4">
@@ -22,17 +28,13 @@ const SliderComp = () => {
               velit. Dolores totam consequuntur saepe nemo corporis dolorum quia
               nam delectus.
             </h1>
-            <button className="bg-white text-[#c86b5a]   font-bold shadow-xl shadow-slate-600 px-4 py-2 rounded-md">
+            <button className="bg-white text-[#aeb9e5]   font-bold shadow-xl shadow-slate-600 px-4 py-2 rounded-md">
               Hemen Başla
             </button>
           </div>
-          <img
-            className="w-1/3 h-[400px] object-cover "
-            src="https://img.freepik.com/free-vector/realistic-rose-smartphone-design-with-three-cameras_23-2148370886.jpg?w=826&t=st=1683210008~exp=1683210608~hmac=d6e3ce78709c39747183ecce2fec0c0c75e4d64c436f5bffe3f2ffa4b286cfd7"
-            alt=""
-          />
+          <img className="w-1/4 h-[400px]  " src={Img1} alt="" />
         </div>
-        <div className="!flex items-center bg-gray-200">
+        <div className="!flex items-center bg-[#cad6ec]">
           <div className="p-10">
             <h1 className="text-6xl font-bold">Lorem ipsum dolor sit amet.</h1>
             <h1 className="text-lg my-4">
@@ -44,13 +46,9 @@ const SliderComp = () => {
               Hemen Başla
             </button>
           </div>
-          <img
-            className="w-1/3 h-[400px] object-cover"
-            src="https://img.freepik.com/free-vector/realistic-smartphone-with-black-back-cover_23-2148385252.jpg?w=826&t=st=1683209570~exp=1683210170~hmac=df86ceea65093fc3d39e5d73f8dfa459fccebb0d8026838de3865b95995fd210"
-            alt=""
-          />
+          <img className="w-1/4 h-[400px] object-cover" src={Img2} alt="" />
         </div>
-        <div className="!flex items-center text-white bg-gray-400">
+        <div className="!flex items-center text-white bg-[#d4bcc8]">
           <div className="p-10 ">
             <h1 className="text-6xl font-bold  ">
               Lorem ipsum dolor sit amet.
@@ -64,13 +62,9 @@ const SliderComp = () => {
               Hemen Başla
             </button>
           </div>
-          <img
-            className="w-1/3 h-[400px] object-cover"
-            src="https://img.freepik.com/free-vector/realistic-blue-smartphone-design-with-two-cameras_23-2148370887.jpg?t=st=1683210008~exp=1683210608~hmac=934ba224a5bd3fe710d96de32993495c2cd9e1693ddb8aebb4f6abbfde8403ba"
-            alt=""
-          />
+          <img className="w-1/4 h-[400px] object-cover" src={Img3} alt="" />
         </div>
-        <div className="!flex items-center text-white bg-gray-800">
+        <div className="!flex items-center text-white bg-[#763fa4]">
           <div className="p-10 ">
             <h1 className="text-6xl font-bold  ">
               Lorem ipsum dolor sit amet.
@@ -84,11 +78,7 @@ const SliderComp = () => {
               Hemen Başla
             </button>
           </div>
-          <img
-            className="w-1/3 h-[400px] object-cover"
-            src="https://img.freepik.com/free-vector/gradient-phone-screen-light-blue-case_23-2148367407.jpg?t=st=1683210112~exp=1683210712~hmac=ae3f68ccee9b04196f1021a8dbde28d87401bd4688036ef31fb3e8f113e8c644"
-            alt=""
-          />
+          <img className="w-1/4 h-[400px] object-cover" src={Img4} alt="" />
         </div>
       </Slider>
     </div>

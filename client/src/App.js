@@ -6,8 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Navbar from "./components/navbar/Navbar";
+//Container
 import PageContainer from "./containers/PageContainer";
+//compoenets
+import Navbar from "./components/navbar/Navbar";
+
 //reactslick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
