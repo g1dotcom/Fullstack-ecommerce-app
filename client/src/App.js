@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import PageContainer from "./containers/PageContainer";
 //compoenets
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 //reactslick
 import "slick-carousel/slick/slick.css";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </PageContainer>
 
       <ToastContainer />
