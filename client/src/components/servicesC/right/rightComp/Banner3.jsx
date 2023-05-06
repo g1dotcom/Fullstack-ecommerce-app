@@ -18,11 +18,11 @@ const Banner3 = () => {
   return (
     <div
       className="flex cursor-pointer justify-center items-center  bg-white  h-full w-10/12 mx-10 shadow-lg shadow-gray-400
-    hover:shadow-2xl hover:shadow-blue-400 hover:scale-90 hover:text-white hover:bg-gray-800 transition-all duration-300"
+    hover:shadow-2xl hover:shadow-blue-400 hover:scale-90 hover:text-white hover:bg-gray-800 transition-all duration-500"
     >
       <div className="flex  justify-evenly w-full items-center ">
         <h1 className="font-bold text-2xl ">Tüm Kulaklık Çeşitleri</h1>
-        <div className="flex justify-evenly w-1/2 items-center bg-gray-100">
+        <div className="flex justify-evenly w-1/2 items-center rounded-full bg-gray-100">
           <div className="flex flex-col  ">
             {" "}
             <span className="flex flex-col justify-center items-center my-8 hover:scale-125 transition-all duration-400">
