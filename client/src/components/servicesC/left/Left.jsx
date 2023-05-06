@@ -12,13 +12,13 @@ import { SiLogitech } from "react-icons/si";
 
 const Left = () => {
   return (
-    <div className="relative cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out ">
+    <div className="relative cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out shadow-2xl shadow-black ">
       <img
-        className="w-[550px]"
+        className="w-[550px] "
         src="https://i.pinimg.com/564x/8a/21/33/8a21334dd9968a18b7ad7a2ccc7e250a.jpg"
         alt=""
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  rounded-xl w-full h-full bg-gray-500 opacity-30 "></div>
+      <div className="absolute  top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2  rounded-xl w-full h-full bg-gray-600 opacity-10 "></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2   w-1/6 h-full bg-gray-200 opacity-50 "></div>
       <h1 className="absolute top-1/2 left-1/2 flex flex-col justify-evenly h-3/4 items-center  -translate-x-1/2 -translate-y-1/2 text-black font-bold text-xl">
         <p>T</p>
