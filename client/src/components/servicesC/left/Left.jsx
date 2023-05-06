@@ -14,7 +14,7 @@ const Left = () => {
   return (
     <div className="relative">
       <img
-        className="w-96"
+        className="w-[500px]"
         src="https://i.pinimg.com/564x/8a/21/33/8a21334dd9968a18b7ad7a2ccc7e250a.jpg"
         alt=""
       />

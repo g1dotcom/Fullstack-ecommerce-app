@@ -17,7 +17,7 @@ import img2 from "../../images/k2.png";
 const Banner3 = () => {
   return (
     <div
-      className="flex cursor-pointer justify-center items-center bg-white  h-full w-full mx-10 
+      className="flex cursor-pointer justify-center items-center  bg-white  h-full w-10/12 mx-10 shadow-lg shadow-gray-400
     hover:shadow-2xl hover:shadow-blue-400 hover:scale-90 hover:text-white hover:bg-gray-800 transition-all duration-300"
     >
       <div className="flex  justify-evenly w-full items-center ">

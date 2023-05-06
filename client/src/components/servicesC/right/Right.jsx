@@ -20,7 +20,7 @@ import Banner3 from "./rightComp/Banner3";
 
 const Right = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex items-center justify-center flex-col">
       <Banner1 />
       <Banner2 />
       <Banner3 />
