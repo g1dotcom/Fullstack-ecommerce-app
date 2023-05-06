@@ -12,9 +12,9 @@ import { SiLogitech } from "react-icons/si";
 
 const Left = () => {
   return (
-    <div className="relative">
+    <div className="relative cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out ">
       <img
-        className="w-[500px]"
+        className="w-[550px]"
         src="https://i.pinimg.com/564x/8a/21/33/8a21334dd9968a18b7ad7a2ccc7e250a.jpg"
         alt=""
       />
@@ -34,16 +34,25 @@ const Left = () => {
       </h1>
       <span className="text-white w-full h-full flex justify-between items-center  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
         <div className="flex flex-col justify-evenly items-center w-full h-full">
-          <SiHuawei className="text-red-500" size={48} />
-          <AiFillApple size={48} />
-          <SiJbl className="text-yellow-600" size={48} />
+          <div className="flex flex-col justify-evenly items-center ">
+            <SiHuawei className="text-red-500 " size={48} />
+            Huawei
+          </div>
           <SiSony className="text-red-600" size={54} />
+          <SiJbl className="text-yellow-600" size={48} />
+
+          <div className=" flex flex-col font-bold justify-evenly items-center">
+            Apple
+            <AiFillApple size={48} />
+          </div>
         </div>
         <div className="flex flex-col justify-evenly items-center w-full h-full">
           <SiAcer className="text-green-500" size={48} />
           <SiXiaomi className="text-orange-500" size={48} />
           <SiPhilipshue className="text-red-500" size={48} />
-          <SiSamsung size={48} />
+
+          <SiSamsung size={64} />
+
           <SiLogitech className="text-blue-500" size={48} />
         </div>
       </span>

@@ -17,8 +17,8 @@ import img2 from "../../images/k2.png";
 const Banner3 = () => {
   return (
     <div
-      className="flex cursor-pointer justify-center items-center  bg-white  h-full w-10/12 mx-10 shadow-lg shadow-gray-400
-    hover:shadow-2xl hover:shadow-blue-400 hover:scale-90 hover:text-white hover:bg-gray-800 transition-all duration-500"
+      className="flex scale-95 cursor-pointer justify-center items-center  bg-white  h-full w-10/12 mx-10 shadow-lg shadow-gray-400
+    hover:shadow-2xl hover:shadow-blue-400 hover:scale-105 hover:text-white hover:bg-gray-800 transition-all duration-500"
     >
       <div className="flex  justify-evenly w-full items-center ">
         <h1 className="font-bold text-2xl ">Tüm Kulaklık Çeşitleri</h1>
