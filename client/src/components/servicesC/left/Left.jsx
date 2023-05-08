@@ -12,7 +12,7 @@ import { SiLogitech } from "react-icons/si";
 
 const Left = () => {
   return (
-    <div className="relative cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out shadow-2xl shadow-black ">
+    <div className="relative cursor-pointer hover:scale-90 transition-all  duration-300 ease-in-out shadow-2xl shadow-black ">
       <img
         className="w-[550px] "
         src="https://i.pinimg.com/564x/8a/21/33/8a21334dd9968a18b7ad7a2ccc7e250a.jpg"

@@ -8,7 +8,9 @@ import Right from "./right/Right";
 const ServicesC = () => {
   return (
     <div className=" w-full my-14 flex justify-evenly items-center ">
-      <Left />
+      <div className="bg-gray-500">
+        <Left />
+      </div>
       <Right />
     </div>
   );
